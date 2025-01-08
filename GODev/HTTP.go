@@ -1,36 +1,29 @@
 package main
 
-import (
-	"fmt"
-	"net/http"
+// func main() {
+// 	r := mux.NewRouter()
+// 	fmt.Println("Server started on port 3000")
+// 	fmt.Println(r)
 
-	"github.com/gorilla/mux"
-)
+// 	CreateBook := func(w http.ResponseWriter, r *http.Request) {
+// 		vars := mux.Vars(r)
+// 		title := vars["title"]
+// 		fmt.Fprintf(w, "Book Title: %s\n", title)
+// 	}
 
-func main() {
-	r := mux.NewRouter()
-	fmt.Println("Server started on port 3000")
-	fmt.Println(r)
+// 	r.HandleFunc("/books/{title}", CreateBook).Methods("POST")
 
-	CreateBook := func(w http.ResponseWriter, r *http.Request) {
-		vars := mux.Vars(r)
-		title := vars["title"]
-		fmt.Fprintf(w, "Book Title: %s\n", title)
-	}
+// 	// r.HandleFunc("/books", func(w http.ResponseWriter, r *http.Request) {
+// 	// 	vars := mux.Vars(r)
+// 	// 	page := vars["Page"]
+// 	// 	fmt.Fprintf(w, "Books Page: %s\n", page)
+// 	// })
 
-	r.HandleFunc("/books/{title}", CreateBook).Methods("POST")
+// 	r.HandleFunc("/title", func(w http.ResponseWriter, r *http.Request) {
+// 		vars := mux.Vars(r)
+// 		title := vars["title"]
+// 		fmt.Fprintf(w, "Title: %s\n", title)
+// 	})
 
-	// r.HandleFunc("/books", func(w http.ResponseWriter, r *http.Request) {
-	// 	vars := mux.Vars(r)
-	// 	page := vars["Page"]
-	// 	fmt.Fprintf(w, "Books Page: %s\n", page)
-	// })
-
-	r.HandleFunc("/title", func(w http.ResponseWriter, r *http.Request) {
-		vars := mux.Vars(r)
-		title := vars["title"]
-		fmt.Fprintf(w, "Title: %s\n", title)
-	})
-
-	http.ListenAndServe(":3000", r)
-}
+// 	http.ListenAndServe(":3000", r)
+// }

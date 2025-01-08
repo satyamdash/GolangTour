@@ -15,6 +15,3 @@ func Defer() {
 
 	fmt.Println("done")
 }
-func main() {
-	Defer()
-}
